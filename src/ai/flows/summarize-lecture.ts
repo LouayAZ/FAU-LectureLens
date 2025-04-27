@@ -10,7 +10,6 @@
  */
 
 import {ai} from '@/ai/ai-instance';
-import {googleAI} from '@genkit-ai/googleai'; // Import googleAI to reference models
 import {z} from 'genkit';
 
 const SummarizeLectureTranscriptInputSchema = z.object({
@@ -37,7 +36,7 @@ export async function summarizeLectureTranscript(
 
 const prompt = ai.definePrompt({
   name: 'summarizeLectureTranscriptPrompt',
-  model: googleAI('gemini-1.5-flash'), // Specify the model
+  model: 'googleai/gemini-1.5-flash', // Specify the model by string identifier
   input: {
     schema: z.object({
       transcript: z

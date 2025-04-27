@@ -8,7 +8,6 @@
  */
 
 import {ai} from '@/ai/ai-instance';
-import {googleAI} from '@genkit-ai/googleai'; // Import googleAI to reference models
 import {z} from 'genkit';
 
 const ExtractKeyTakeawaysInputSchema = z.object({
@@ -27,7 +26,7 @@ export async function extractKeyTakeaways(input: ExtractKeyTakeawaysInput): Prom
 
 const prompt = ai.definePrompt({
   name: 'extractKeyTakeawaysPrompt',
-  model: googleAI('gemini-1.5-flash'), // Specify the model
+  model: 'googleai/gemini-1.5-flash', // Specify the model by string identifier
   input: {
     schema: z.object({
       transcript: z.string().describe('The lecture transcript.'),
