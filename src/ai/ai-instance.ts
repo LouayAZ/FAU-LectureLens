@@ -5,8 +5,8 @@ import nextPlugin from '@genkit-ai/next'; // Correct import using default export
 
 export const ai = genkit({
   plugins: [
-    nextPlugin(), // Call the imported plugin function
-    googleAI({}), // Configure Google AI provider (ensure API key is set in .env)
+    nextPlugin, // Pass the plugin object directly
+    googleAI(), // Keep googleAI as a function call if it requires configuration, or pass googleAI if no config needed. Assuming {} config is intentional.
   ],
   logLevel: 'debug',
   enableTracingAndMetrics: true,
