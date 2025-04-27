@@ -1,7 +1,7 @@
 // src/ai/ai-instance.ts
 import {genkit} from 'genkit';
 import {googleAI} from '@genkit-ai/googleai';
-import { nextPlugin } from '@genkit-ai/next'; // Correct import
+import nextPlugin from '@genkit-ai/next'; // Correct import using default export
 
 export const ai = genkit({
   plugins: [
