@@ -10,6 +10,7 @@
  */
 
 import {ai} from '@/ai/ai-instance';
+import {googleAI} from '@genkit-ai/googleai'; // Import googleAI to reference models
 import {z} from 'genkit';
 
 const GenerateQuizInputSchema = z.object({
@@ -44,6 +45,7 @@ export async function generateQuiz(input: GenerateQuizInput): Promise<GenerateQu
 
 const prompt = ai.definePrompt({
   name: 'generateQuizPrompt',
+  model: googleAI('gemini-1.5-flash'), // Specify the model
   input: {
     schema: z.object({
       transcript: z
@@ -87,3 +89,4 @@ const generateQuizFlow = ai.defineFlow<
     return output;
   }
 );
+
