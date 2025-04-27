@@ -166,6 +166,7 @@ export default function LectureLens() {
         <p className="text-lg text-muted-foreground">
           Upload your lecture transcript and unlock summaries, key takeaways, and quizzes.
         </p>
+        <p className="text-lg text-muted-foreground">   (FAU Students: laboalzahab2021, culus2021) </p>
       </header>
 
       <Card className="mb-8 shadow-md">
