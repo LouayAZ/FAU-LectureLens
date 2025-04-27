@@ -1,12 +1,13 @@
+// src/ai/ai-instance.ts
 import {genkit} from 'genkit';
 import {googleAI} from '@genkit-ai/googleai';
+import { nextPlugin } from '@genkit-ai/next'; // Correct import
 
 export const ai = genkit({
-  promptDir: './prompts',
   plugins: [
-    googleAI({
-      apiKey: process.env.GOOGLE_GENAI_API_KEY,
-    }),
+    nextPlugin(), // Call the imported plugin function
+    googleAI({}), // Configure Google AI provider (ensure API key is set in .env)
   ],
-  model: 'googleai/gemini-2.0-flash',
+  logLevel: 'debug',
+  enableTracingAndMetrics: true,
 });
